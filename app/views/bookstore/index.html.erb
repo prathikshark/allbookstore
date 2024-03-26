@@ -1,0 +1,40 @@
+
+<style>
+h1{
+margin-left:700px;
+color:white;
+
+}
+.container{
+  margin-top:20px;
+  justify-self:center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+.c{
+  border-radius:7px;
+  padding: 20px;
+  text-align: center;
+
+}
+.image{
+width:120px;
+height:120px;
+border-radius:5px
+}
+</style>
+
+<div class="container">
+<% for bookstore in @bookstores %>
+<div class="c", style= 'background-color:lightblue'>
+  <div class="c-body">
+  <%= image_tag(url_for(bookstore.image), class: "image") if bookstore.image.attached? %>
+
+<h5 class="c-title" ><%= bookstore.id%></h5>
+<h5 class="c-title"><%= bookstore.name%></h5>
+<h6 class="author"><%= bookstore.phone%></h6>
+</div>
+</div>
+<% end %>
+</div>

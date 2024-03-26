@@ -1,0 +1,85 @@
+<style>
+.*{
+    margin:0;
+    padding:0;
+    box-size:content-box;
+   
+}
+
+h1{
+  margin-bottom:30px;
+  margin-left:48vw;
+  color:white;
+}
+.frm{
+    display:flex;
+    width:550px;
+    margin-left:37vw;
+    justify-content:center;
+    background-color:lightblue;
+    border-radius:10px;
+    padding:20px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:500px;
+   
+    
+}
+
+</style>
+
+
+<h1>Sign up</h1>
+
+<h6 class="frm">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field mb-3">
+  <%= f.label :name %><br />
+  <%= f.text_field :name, class:"form-control", autofocus: true, autocomplete: "name" %>
+</div>
+
+  <div class="field mb-3">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, class:"form-control", autofocus: true, autocomplete: "address" %>
+  </div>
+  <div class="field mb-3">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, class:"form-control", autofocus: true, autocomplete: "phone" %>
+  </div>
+
+
+
+
+  <div class="field mb-3">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, class:"form-control", autocomplete: "new-password" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" ,class:"btn btn-primary"%>
+  </div>
+<% end %>
+
+</h6>
+
+<div>
+<%= render "devise/shared/links" %>
+</div>

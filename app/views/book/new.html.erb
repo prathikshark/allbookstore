@@ -1,0 +1,73 @@
+<style>
+.*{
+    margin:0;
+    padding:0;
+    box-size:content-box;
+   
+}
+
+h1{
+  margin-bottom:30px;
+  margin-left:48vw;
+  color:white;
+}
+.frm{
+    display:flex;
+    width:550px;
+    margin-left:37vw;
+    justify-content:center;
+    # background-color:rgb(80,179,246);
+    # background-color:rgb(131,182,51);
+    background-color:lightblue;
+    border-radius:10px;
+    padding:20px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:500px;
+   
+    
+}
+
+</style>
+<h6 class="frm">
+
+<%= form_for @book ,url: addBook_path  do |form| %>
+
+    <div class="mb-3">
+    <%= form.label :Bookstore, "Book store id" %>
+    <%= form.number_field :bookstore_id, class: "form-control", placeholder: " bookstore id" %>
+    </div>
+    <div class="mb-3">
+    <%= form.label :name, "Book Name" %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Bookstore Name" %>
+  </div>
+  <div class="mb-3">
+  <%= form.label :author, "Author" %>
+  <%= form.text_field :author, class: "form-control", placeholder: "author" %>
+</div>
+  <div class="mb-3">
+    <%= form.label :description, " description" %>
+    <%= form.text_field :description, class: "form-control", placeholder: "Description" %>
+  </div>
+  <div class="mb-3">
+  <%= form.label :Price, "Price" %>
+  <%= form.number_field :price, class: "form-control", placeholder: " price" %>
+</div>
+<div class="mb-3">
+<%= form.label :quantity, "Quantity" %>
+<%= form.number_field :quantity, class: "form-control", placeholder: " quantity" %>
+</div>
+
+<div class="mb-3">
+<%= form.label :image, "image" %>
+<%= form.file_field :image, class: "form-control", placeholder: " image" %>
+</div>
+
+
+  <%= form.submit "Add", class: "btn btn-primary" %>
+
+<% end %>
+</h6>
