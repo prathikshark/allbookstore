@@ -36,6 +36,10 @@ border-radius:5px
 <p class="c-text"><%= book.description%></p>
 <p class="c-text">Price: <%= book.price%></p>
 <p class="c-text">available: <%= book.quantity%></p>
+<%= button_to 'Edit' , edit_book_path(book), method: :get ,class: 'btn btn-success' %></br>
+<%= button_to 'delete', delete_book_path(book) ,method: :delete, data: { confirm: 'Are you sure?' }  ,class: 'btn btn-danger'%>
+
+
 </div>
 </div>
 <% end %>

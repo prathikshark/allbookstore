@@ -10,9 +10,7 @@ class BookstoreController < ApplicationController
     def create
         @bookstore = Bookstore.new(bookstore_params)
         if @bookstore.save
-          puts "===================="
-          puts @bookstore.image.attached?
-          redirect_to admin_path
+          redirect_to showbs_path
         else
           render :new
         end

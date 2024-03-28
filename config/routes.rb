@@ -4,9 +4,14 @@ Rails.application.routes.draw do
   root "home#index"
   get 'admin', to:'admin#index'
   get 'showbs', to: 'bookstore#index'
-  get 'show', to: 'book#index'
-  get 'addBookStore', to:'bookstore#new'
-  post 'addBookStore' ,to:'bookstore#create'
+  get 'show', to: 'book#index' #display all
+  delete 'book/:id', to: 'book#destroy',as:'delete_book'
+
+  get 'book_edit/:id', to: 'book#edit', as: 'edit_book' #form for edit
+  put 'book_update/:id' ,to: 'book#update', as:'update_book'
+  
+  get 'addBookStore', to:'bookstore#new' #display form to add
+  post 'addBookStore' ,to:'bookstore#create' #to create
   get 'addBook' ,to: 'book#new'
   post 'addBook', to:'book#create'
  
