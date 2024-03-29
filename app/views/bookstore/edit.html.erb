@@ -35,11 +35,11 @@ form{
 
 <div class="bdy">
 <h6 class="frm">
-<%= form_for @bookstore, url: addBookStore_path do |form| %>
+<%= form_for @bookstore, url: update_bookstore_path ,method: :put do |form| %>
+ 
+  <%= render partial:"shared/bookstore_form", locals: { form: form }  %>
 
-  <%= render partial:"shared/book", locals: { form: form }  %>
-  
-  <%= form.submit "Add", class: "btn btn-primary" %>
+  <%= form.submit "Update", class: "btn btn-primary" %>
 <% end %>
 </h6>
 </div>

@@ -37,12 +37,12 @@ form{
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field mb-3">
     <%= f.label :email %><br />
-    <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email", placeholder: "abcd@gmail.com" %>
   </div>
 
   <div class="field mb-3">
     <%= f.label :password %><br />
-    <%= f.password_field :password, class:"form-control", autocomplete: "current-password" %>
+    <%= f.password_field :password, class:"form-control", autocomplete: "current-password", placeholder: " ******" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
