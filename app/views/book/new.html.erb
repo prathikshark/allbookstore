@@ -36,7 +36,7 @@ form{
 
 <%= form_for @book ,url: addBook_path  do |form| %>
 
-  <%= render partial:"shared/book", locals: { form: form }  %>
+  <%= render partial:"shared/book_form", locals: { form: form }  %>
 
   <%= form.submit "Add", class: "btn btn-primary" %>
 

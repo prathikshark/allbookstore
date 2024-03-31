@@ -26,21 +26,16 @@ form{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    width:500px;
-   
-    
+    width:500px;  
 }
-
 </style>
+
 <h1> Edit the book </h1>
-
-
-
 
 <h6 class="frm">
   <%= form_for @book, url: update_book_path, method: :put do |form| %>
 
-    <%= render partial: "shared/book" , locals: { form: form } %>
+    <%= render partial: "shared/book_form" , locals: { form: form } %>
 
     <%= form.submit "Update", class: "btn btn-primary" %>
 

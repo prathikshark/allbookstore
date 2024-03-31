@@ -52,9 +52,6 @@ form{
     <%= f.text_field :phone, class:"form-control", autofocus: true, autocomplete: "phone" %>
   </div>
 
-
-
-
   <div class="field mb-3">
     <%= f.label :email %><br />
     <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
@@ -76,10 +73,13 @@ form{
   <div class="actions">
     <%= f.submit "Sign up" ,class:"btn btn-primary"%>
   </div>
+  <br>
+
+  <%= render "devise/shared/links" %>
+
 <% end %>
 
 </h6>
 
 <div>
-<%= render "devise/shared/links" %>
 </div>

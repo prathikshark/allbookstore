@@ -1,5 +1,5 @@
 <style>
-h1{
+h1,h3{
 margin-left:700px;
 color:white;
 
@@ -24,21 +24,31 @@ border-radius:5px
 }
 </style>
 
+
+<% if current_user && !current_user.isadmin? %>
+<h3> Add to cart </h3>
+<% end %>
+
+
 <div class="container">
 <% for book in @books %>
 <div class="c", style= 'background-color:lightblue'>
   <div class="c-body">
+  
   <%=image_tag(url_for(book.image),class:"image") if book.image.attached? %>
 
   <h5 class="c-title" ><%= book.id%></h5>
-<h5 class="c-title"><%= book.name%></h5>
-<h6 class="author"><%= book.author%></h6>
-<p class="c-text"><%= book.description%></p>
-<p class="c-text">Price: <%= book.price%></p>
-<p class="c-text">available: <%= book.quantity%></p>
+  <h5 class="c-title"><%= book.name%></h5>
+  <h6 class="author"><%= book.author%></h6>
+  <p class="c-text"><%= book.description%></p>
+  <p class="c-text">Price: <%= book.price%></p>
+  <p class="c-text">available: <%= book.quantity%></p>
+<% if current_user && current_user.isadmin? %>
 <%= button_to 'Edit' , edit_book_path(book), method: :get ,class: 'btn btn-success' %></br>
 <%= button_to 'delete', delete_book_path(book) ,method: :delete, data: { confirm: 'Are you sure?' }  ,class: 'btn btn-danger'%>
-
+<% else %>
+<%= button_to 'Add to cart', root_path, method: :get,class: 'btn btn-primary' %>
+<% end %>
 
 </div>
 </div>

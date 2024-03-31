@@ -37,7 +37,7 @@ form{
 <h6 class="frm">
 <%= form_for @bookstore, url: addBookStore_path do |form| %>
 
-  <%= render partial:"shared/book", locals: { form: form }  %>
+  <%= render partial:"shared/bookstore_form", locals: { form: form }  %>
   
   <%= form.submit "Add", class: "btn btn-primary" %>
 <% end %>

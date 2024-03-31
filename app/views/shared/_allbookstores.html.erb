@@ -1,0 +1,9 @@
+
+  <%= image_tag(url_for(bookstore.image), class: "image") if bookstore.image.attached? %>
+
+<h4 class="c-title" ><%= bookstore.id%></h4>
+<h5 class="c-title"><%= bookstore.name%></h5>
+<h6 class="author"><%= bookstore.phone%></h6>
+<h6 class="address"><%= bookstore.address%></h6>
+<h6 class="email"><%= bookstore.email%></h6>
+

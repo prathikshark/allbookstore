@@ -29,16 +29,12 @@ border-radius:5px
 <% for bookstore in @bookstores %>
 <div class="c", style= 'background-color:lightblue'>
   <div class="c-body">
-  <%= image_tag(url_for(bookstore.image), class: "image") if bookstore.image.attached? %>
-
-<h4 class="c-title" ><%= bookstore.id%></h4>
-<h5 class="c-title"><%= bookstore.name%></h5>
-<h6 class="author"><%= bookstore.phone%></h6>
-<h6 class="address"><%= bookstore.address%></h6>
-<h6 class="email"><%= bookstore.email%></h6>
+<%= render partial: "shared/allbookstores", locals: {bookstore:bookstore} %>
 <%= button_to 'Edit' , edit_bookstore_path(bookstore), method: :get ,class: 'btn btn-success' %></br>
 <%= button_to 'delete', delete_bookstore_path(bookstore), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
 </div>
 </div>
 <% end %>
+
 </div>
