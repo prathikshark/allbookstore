@@ -18,6 +18,14 @@ Rails.application.routes.draw do
   post 'addBookStore' ,to:'bookstore#create' #to create
   get 'addBook' ,to: 'book#new'
   post 'addBook', to:'book#create'
+
+
+  resources :cart
+  post 'cart/add_to_cart/:book_id', to: 'cart#add_to_cart', as: 'add_to_cart'
+  put 'cart/decrease/:book_id' ,to: 'cart#decrease',as: 'decrease_cart_item'
+  put 'cart/increase/:book_id' ,to: 'cart#increase',as: 'increase_cart_item'
+
+  resources :payment
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

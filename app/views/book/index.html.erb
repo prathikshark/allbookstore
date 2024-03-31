@@ -47,9 +47,9 @@ border-radius:5px
 <%= button_to 'Edit' , edit_book_path(book), method: :get ,class: 'btn btn-success' %></br>
 <%= button_to 'delete', delete_book_path(book) ,method: :delete, data: { confirm: 'Are you sure?' }  ,class: 'btn btn-danger'%>
 <% else %>
-<%= button_to 'Add to cart', root_path, method: :get,class: 'btn btn-primary' %>
-<% end %>
+<%= button_to 'Add to cart', add_to_cart_path(book_id: book.id), method: :post, class: 'btn btn-primary' %>
 
+<% end %>
 </div>
 </div>
 <% end %>

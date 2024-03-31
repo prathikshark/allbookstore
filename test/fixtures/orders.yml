@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2024-03-31
+  time: 2024-03-31 21:27:48
+  user: one
+
+two:
+  date: 2024-03-31
+  time: 2024-03-31 21:27:48
+  user: two
