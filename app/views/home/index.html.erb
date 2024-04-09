@@ -36,7 +36,7 @@ border-radius:5px
 
   <%= render partial: "shared/allbookstores", locals: {bookstore:bookstore} %>
   <br>
-  <%= button_to 'Select', show_path, method: :get ,class: 'btn btn-primary'%>
+  <%= button_to 'Select', show_book_path(id: bookstore.id), method: :get, class: 'btn btn-primary' %>
 
 
 </div>

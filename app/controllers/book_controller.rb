@@ -1,7 +1,13 @@
 class BookController < ApplicationController
     def index
       @books = Book.all
-    end  
+    end 
+    
+    def show
+      @bookstore_id=params[:id]
+      @bookstore = Bookstore.find(@bookstore_id)
+      @books = @bookstore.books 
+    end
     def new
       @book = Book.new
     end

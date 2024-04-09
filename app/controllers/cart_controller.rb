@@ -6,6 +6,7 @@ class CartController < ApplicationController
 
  end
  def add_to_cart 
+  @bookstore_id=params[:bookstore_id]
    @user_id=current_user.id
    @book_id=params[:book_id]
    @book=Book.find_by(id:@book_id)
@@ -33,7 +34,7 @@ else
     flash[:alert] = "Book not available"
 end
 
-redirect_to show_path
+redirect_to show_book_path(id: @bookstore_id)
 
 end
 def decrease

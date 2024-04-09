@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root "home#index"
   get 'admin', to:'admin#index'
 
-  get 'show', to: 'book#index' #display all
+  get 'allbooks',to: 'book#index'
+  get 'show/:id', to: 'book#show', as: 'show_book'
   delete 'book/:id', to: 'book#destroy',as:'delete_book'
   get 'book_edit/:id', to: 'book#edit', as: 'edit_book' #form for edit
   put 'book_update/:id' ,to: 'book#update', as:'update_book'

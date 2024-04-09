@@ -69,9 +69,9 @@ h1{
     <p class="r"> <%= cart_item.book.name %> </p>
     <p class="r"><%= cart_item.book.author %></p>
     <p class="r">Rs. <%= cart_item.book.price %></p>
-    <%= button_to '-',decrease_cart_item_path(book_id:cart_item.id) ,method: :put %> 
+    <%= button_to '-',decrease_cart_item_path(book_id:cart_item.book_id) ,method: :put %> 
     <p class="r"><%= cart_item.quantity %></p> 
-    <%= button_to '+',increase_cart_item_path(book_id:cart_item.id) ,method: :put %>
+    <%= button_to '+',increase_cart_item_path(book_id:cart_item.book_id) ,method: :put %>
 
 
 
