@@ -1,39 +1,8 @@
-<style>
-.*{
-    margin:0;
-    padding:0;
-    box-size:content-box;
-   
-}
 
-h1{
-  margin-bottom:30px;
-  margin-left:48vw;
-  color:white;
-}
-.frm{
-    display:flex;
-    width:550px;
-    margin-left:37vw;
-    justify-content:center;
-    # background-color:rgb(80,179,246);
-    # background-color:rgb(131,182,51);
-    background-color:lightblue;
-    border-radius:10px;
-    padding:20px;
-}
-form{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    width:500px;  
-}
-</style>
-
-<h1> Edit the book </h1>
+<h1 class="heading-edit"> Edit the book </h1>
 
 <h6 class="frm">
-  <%= form_for @book, url: update_book_path, method: :put do |form| %>
+  <%= form_for @book, url: update_book_path, method: :put,  html: { class: 'form' } do |form| %>
 
     <%= render partial: "shared/book_form" , locals: { form: form } %>
 

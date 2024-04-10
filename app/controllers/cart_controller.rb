@@ -44,8 +44,10 @@ def decrease
   
     if @cart_item
       if @cart_item.quantity > 1
+        flash[:alert] = "Book removed"
         @cart_item.update(quantity: @cart_item.quantity - 1)
       else
+        flash[:alert] = "Book removed"
         @cart_item.destroy
       end
     end
@@ -64,6 +66,7 @@ def decrease
   
     if @book && @book.quantity > 0
       if @cart_item
+        flash[:notice] = "Book added"
         @cart_item.update(quantity: @cart_item.quantity + 1)
       else
         current_user.cart_items.create(book_id: @book_id, quantity: 1)

@@ -1,6 +1,38 @@
-<%= render partial:"shared/admin_navbar" %>
+<h2>Hello Admin</h2>
+<div class="row mt-3">
+  <div class="col-md-6 mb-3">
+    <div class="card  custom-card">
+      <div class="card-body">
+        <p class="card-text">Number of bookstores: <%= @bookstore_count %></p>
+        <%= link_to 'All book stores', showbs_path, class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 mb-3">
+    <div class="card custom-card">
+      <div class="card-body">
+        <p class="card-text">Number of books: <%= @book_count %></p>
+        <%= link_to 'All books', allbooks_path, class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Add bookstore' ,addBookStore_path %>
-</br>
-<%= link_to 'Add Books' ,addBook_path %>
-
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <div class="card custom-card">
+      <div class="card-body">
+        <%= link_to 'Add bookstore', addBookStore_path, class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6 mb-3">
+    <div class="card custom-card">
+      <div class="card-body">
+        <%= link_to 'Add Books', addBook_path, class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,43 +1,6 @@
-<style>
-<style>
-.*{
-    margin:0;
-    padding:0;
-    box-size:content-box;
-   
-}
-.bdy{
-    background-color:rgb(37,44,52);
-
-}
-h1{
-  margin-bottom:30px;
-  margin-left:48vw;
-  color:white;
-}
-.frm{
-    display:flex;
-    width:550px;
-    margin-left:37vw;
-    justify-content:center;
-    # background-color:rgb(80,179,246);
-    # background-color:rgb(131,182,51);
-    background-color:lightblue;
-    border-radius:10px;
-    padding:20px;
-}
-form{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    width:500px;
-   
-    
-}
-</style>
 <h1>Payment</h1>
 <div class='frm'>
-<%= form_with model: @payment, url: payment_index_path do |form| %>
+<%= form_with model: @payment, url: payment_index_path, html: { class: 'form' } do |form| %>
     <div class="form-group">
       <%= label_tag(:card_number, "Card Number") %>
       <%= text_field_tag(:card_number, nil, class: "form-control", placeholder: "Enter card number") %>

@@ -17,7 +17,7 @@ class BookController < ApplicationController
       @book = book_manager.create
   
       if @book
-        redirect_to show_path
+        redirect_to allbooks_path
       else
         render :new
       end
@@ -26,7 +26,7 @@ class BookController < ApplicationController
     def destroy
       book_manager = Admin::BookManager.new(nil)
       book_manager.delete_book(params[:id])
-      redirect_to show_path
+      redirect_to allbooks_path
     end
     def edit
         book_editor = Admin::BookManager.new(params)
@@ -38,7 +38,7 @@ class BookController < ApplicationController
         @book = book_editor.update_book
     
         if @book
-          redirect_to show_path
+          redirect_to allbooks_path
         else
           render :edit
         end

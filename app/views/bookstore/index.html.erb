@@ -1,30 +1,4 @@
-
-<style>
-h1{
-margin-left:700px;
-color:white;
-
-}
-.container{
-  margin-top:20px;
-  justify-self:center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
-.c{
-  border-radius:7px;
-  padding: 20px;
-  text-align: center;
-
-}
-.image{
-width:120px;
-height:120px;
-border-radius:5px
-}
-</style>
-
+<h1 class="heading_allbs"> All bookstores</h1>
 <div class="container">
 <% for bookstore in @bookstores %>
 <div class="c", style= 'background-color:lightblue'>

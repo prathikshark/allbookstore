@@ -1,30 +1,4 @@
-<style>
-h1,h3{
-margin-left:700px;
-color:white;
-
-}
-.container{
-  margin-top:20px;
-  justify-self:center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
-.c{
-  border-radius:7px;
-  padding: 20px;
-  text-align: center;
-
-}
-.image{
-width:120px;
-height:120px;
-border-radius:5px
-}
-</style>
-
-
+<h1>All books</h1>
 <% if current_user && !current_user.isadmin? %>
 <h3> Add to cart </h3>
 <% end %>
@@ -43,9 +17,11 @@ border-radius:5px
   <p class="c-text"><%= book.description%></p>
   <p class="c-text">Price: <%= book.price%></p>
   <p class="c-text">available: <%= book.quantity%></p>
+  <p class="c-text">bookstore: <%= book.bookstore.name%></p>
+
 <% if current_user && current_user.isadmin? %>
-<%= button_to 'Edit' , edit_book_path(book), method: :get ,class: 'btn btn-success' %></br>
-<%= button_to 'delete', delete_book_path(book) ,method: :delete, data: { confirm: 'Are you sure?' }  ,class: 'btn btn-danger'%>
+<%= button_to 'Edit' , edit_book_path(book), method: :get ,class: 'btn btn-success ' %></br>
+<%= button_to 'delete', delete_book_path(book) ,method: :delete, data: { confirm: 'Are you sure?' }  ,class: 'btn btn-danger '%>
 <% else %>
 <%= button_to 'Add to cart', add_to_cart_path(book_id: book.id), method: :post, class: 'btn btn-primary' %>
 

@@ -10,6 +10,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'rails-ujs' %>
+    <%= stylesheet_link_tag 'application',params[:controller] %>
+
   </head>
 
   <body style="background-color:rgb(37,44,52); margin:0; padding: 0;">
@@ -42,7 +44,12 @@
     </ul>
   </div>
 </nav>
-
+<% flash.each do |name, msg| %>
+  <div class="flash-message alert alert-<%= name %>">
+     <%= msg %>
+  </div>
+ <% end %>
+ 
 <%= yield %>
 </body>
 </html>
