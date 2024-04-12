@@ -6,5 +6,11 @@ class User < ApplicationRecord
    has_many :carts, dependent: :destroy
    has_many :books , through: :carts
    has_many :orders 
+   
+   after_create :send_welcome_email
 
- end
+   def send_welcome_email
+    SignupMailer.welcome(self).deliver_now
+  end
+  
+end
