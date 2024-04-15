@@ -11,8 +11,6 @@ class CartController < ApplicationController
    @user_id=current_user.id
    @book_id=params[:book_id]
    @book=Book.find_by(id:@book_id)
-
-  
    if @book.quantity > 0 
    @cart_item=Cart.find_by(book_id:@book_id)
 if @cart_item

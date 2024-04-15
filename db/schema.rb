@@ -118,11 +118,11 @@ ActiveRecord::Schema.define(version: 2024_03_31_160410) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "locked_at"
-    t.integer "failed_attempts"
-    t.string "unlock_token"
     t.string "name"
     t.string "phone"
     t.string "address"
