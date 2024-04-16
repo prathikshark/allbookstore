@@ -1,4 +1,4 @@
-require '/Users/prkoteshwara/allbookstore/lib/services/bookstore_service.rb'
+require 'C:\Users\prath\OneDrive\Desktop\allbookstore\lib\services\bookstore_service.rb'
 
 class BookstoreController < ApplicationController
  def index
@@ -10,32 +10,34 @@ class BookstoreController < ApplicationController
  end
 
  def create
-      service=BookstoreLogic::Bookstore_Service.new(bookstore_params)
+      service=BookstoreLogic::Bookstore_Service.new(params: bookstore_params)
       result = service.create_bookstore
 
-      if result.errors.any?
-         flash.now[:alert] = result.errors.join(', ')
+      if result.errors
+         flash.now[:alert] = result[:errors].join(', ')
          render :new
-      else
+       else
          redirect_to showbs_path
-         flash.now[:alert] = "Bookstore added successfully"
-      end
+         flash[:notice] = "Bookstore added successfully"
+       end
 
  end
 
  
  def destroy
-    @bookstore = Bookstore.find(params[:id])
-    service = BookstoreLogic::BookstoreActions.new({})
-    result = service.delete_bookstore(@bookstore)
+   result = BookstoreLogic::Bookstore_Service.new(id: params[:id]).delete_bookstore
 
-    unless result[:success]
-      flash[:alert] = "Could not delete bookstore"
+ 
+   #  @bookstore = Bookstore.find(params[:id])
+   #  service = BookstoreLogic::Bookstore_Service.new({})
+   #  result = service.delete_bookstore(@bookstore)
+    if result.errors
       redirect_to showbs_path
-    else
-      flash[:alert] = result[:message]
+      flash[:alert] = "Successfully deleted"
+   else 
       redirect_to showbs_path
-    end
+      # flash[:alert] = result.errors.join(', ')
+   end
  end
 
  def edit
@@ -44,7 +46,7 @@ class BookstoreController < ApplicationController
 
  def update
     @bookstore = Bookstore.find(params[:id])
-    service = BookstoreLogic::BookstoreActions.new(bookstore_params)
+    service = BookstoreLogic::Bookstore_Service.new(bookstore_params)
     result = service.update_bookstore(@bookstore)
     unless result[:success]
       flash[:alert] = result[:message]

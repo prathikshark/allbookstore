@@ -1,14 +1,17 @@
-require '/Users/prkoteshwara/allbookstore/lib/services/bookstore/creator.rb'
+require 'C:\Users\prath\OneDrive\Desktop\allbookstore\lib\services\bookstore\creator.rb'
+require 'C:\Users\prath\OneDrive\Desktop\allbookstore\lib\services\bookstore\destroyer.rb'
 module BookstoreLogic
 
  class Bookstore_Service
+  attr_reader :errors
 
-    def initialize(params)
+    def initialize(params: nil, id: nil)
       @params = params
+      @id=id
     end
 
     def create_bookstore
-     result=BookstoreLogic::Creator.new(@params).call
+     res=BookstoreLogic::Creator.new(@params).call
     end
 
     def update_bookstore(bookstore)
@@ -19,9 +22,8 @@ module BookstoreLogic
       end
     end
 
-    def delete_bookstore(bookstore)
-      bookstore.destroy
-      { success: true, message: "Bookstore deleted successfully" }
+    def delete_bookstore
+        BookstoreLogic::Destroyer.new(@id).call
     end
  end
 end
