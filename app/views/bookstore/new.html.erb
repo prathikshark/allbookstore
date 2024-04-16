@@ -1,12 +1,5 @@
- 
-
-<div class="bdy">
+ <div class="bdy">
 <h6 class="frm">
-<%= form_for @bookstore, url: addBookStore_path  , html: { class: 'form' } do |form| %>
-
-  <%= render partial:"shared/bookstore_form", locals: { form: form }  %>
-  
-  <%= form.submit "Add", class: "btn btn-primary" %>
-<% end %>
+    <%= render partial:"shared/bookstore_form", locals: { bookstore: @bookstore, path: addBookStore_path, btn_text: "Add"}  %>
 </h6>
 </div>

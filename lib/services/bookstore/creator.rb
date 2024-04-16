@@ -9,7 +9,7 @@ module BookstoreLogic
         end
 
         def call
-            bookstore = @bookstore_class.new(@params)
+            bookstore = @bookstore_class.create(@params)
             @errors = bookstore.errors.full_messages unless bookstore.save
             self
         end  

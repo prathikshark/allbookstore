@@ -10,7 +10,7 @@ module BookstoreLogic
 
         def call
             bookstore = Bookstore.find_by(id: @id)
-            @errors = ['Bookstore not found or cannot be deleted.'] if bookstore && bookstore.destroy
+            @errors = ['Bookstore not found or cannot be deleted.'] unless bookstore && bookstore.destroy
             self
           end
     end

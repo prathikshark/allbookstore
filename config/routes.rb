@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'showbs', to: 'bookstore#index'
   delete 'bookstore/:id', to: 'bookstore#destroy', as:'delete_bookstore'
   get 'bookstore_edit/:id', to: 'bookstore#edit',as: 'edit_bookstore'
-  put 'bookstore_update/:id',to: 'bookstore#update',as: 'update_bookstore'
+  patch 'bookstore_update/:id',to: 'bookstore#update',as: 'update_bookstore'
   
   get 'addBookStore', to:'bookstore#new' #display form to add
   post 'addBookStore' ,to:'bookstore#create' #to create

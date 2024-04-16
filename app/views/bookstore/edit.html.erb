@@ -1,11 +1,7 @@
  <h1> Edit the bookstore</h1>
 <div class="bdy">
 <h6 class="frm">
-<%= form_for @bookstore, url: update_bookstore_path ,method: :put , html: { class: 'form' } do |form| %>
- 
-  <%= render partial:"shared/bookstore_form", locals: { form: form }  %>
+<%= render partial:"shared/bookstore_form", locals: { bookstore: @bookstore, path: update_bookstore_path(@bookstore.id) ,btn_text: "Update"}%>
 
-  <%= form.submit "Update", class: "btn btn-primary" %>
-<% end %>
 </h6>
 </div>

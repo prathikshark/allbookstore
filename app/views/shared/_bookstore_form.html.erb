@@ -1,21 +1,31 @@
-<div class="mb-3">
-<%= form.label :name, "Bookstore Name" %>
-<%= form.text_field :name, class: "form-control", placeholder: "Bookstore Name" %>
-</div>
-<div class="mb-3">
-<%= form.label :address, "Address" %>
-<%= form.text_field :address, class: "form-control", placeholder: "address" %>
-</div>
-<div class="mb-3">
-<%= form.label :email, "Email Address" %>
-<%= form.email_field :email, class: "form-control", placeholder: "Email Address" %>
-</div>
-<div class="mb-3">
-<%= form.label :name, "Bookstore phone" %>
-<%= form.text_field :phone, class: "form-control", placeholder: " phone" %>
-</div>
+<%= form_with model: bookstore, url: path  ,html: { class: 'form' }  do |form| %>
 
-<div class="mb-3">
-<%= form.label :image %>
-<%= form.file_field :image %>
-</div>
+
+    <div class="mb-3">
+        <%= form.label :name, "Bookstore Name" %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Bookstore Name" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :address, "Address" %>
+        <%= form.text_field :address, class: "form-control", placeholder: "address" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :email, "Email Address" %>
+        <%= form.email_field :email, class: "form-control", placeholder: "Email Address" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :name, "Bookstore phone" %>
+        <%= form.text_field :phone, class: "form-control", placeholder: " phone" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+    </div>
+
+    <%= form.submit btn_text, class: "btn btn-primary" %>
+
+<% end %>
