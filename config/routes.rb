@@ -28,5 +28,11 @@ Rails.application.routes.draw do
 
   resources :payment
  
+
+  devise_for, contollers: {
+  registrations: 'users/registrations', # This controller handles actions related to user sign-up and account management.
+  session: 'users/sessions', # This controller handles actions related to user sign-in and sign-out.
+  omniauth_callbacks: 'users/omniauth_callbacks' # This controller manages the authentication flow when users sign in using external providers like Google, Facebook, etc.
+}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

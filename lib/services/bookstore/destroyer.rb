@@ -10,8 +10,21 @@ module BookstoreLogic
 
         def call
             bookstore = @bookstore_class.find_by(id: @id)
-            @errors = bookstore.errors.full_messagess unless bookstore && bookstore.destroy
-            self
-          end
-    end
+            if bookstore && bookstore.destroy
+                return true
+            else
+                 errors = bookstore.errors.full_messages
+                 return errors
+             end
+        end
  end
+end
+
+
+#   bookstore = @bookstore_class.new(@params)
+#             if bookstore.save
+#                 return true
+#             else
+#                 errors = bookstore.errors.full_messages
+#                 return errors
+#             end
