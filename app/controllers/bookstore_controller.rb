@@ -1,4 +1,4 @@
-require "/Users/prkoteshwara/hello/allbookstore/lib/services/bookstore_service.rb"
+require 'C:\Users\prath\OneDrive\Desktop\allbookstore\lib\services\bookstore_service.rb'
 
 class BookstoreController < ApplicationController
    before_action :init_bookstore,only: [:new] 

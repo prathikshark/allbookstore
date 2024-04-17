@@ -1,5 +1,5 @@
-require '/Users/prkoteshwara/hello/allbookstore/lib/services/bookstore/creator.rb'
-require '/Users/prkoteshwara/hello/allbookstore/lib/services/bookstore/destroyer.rb'
+require 'C:\Users\prath\OneDrive\Desktop\allbookstore\lib\services\bookstore\creator.rb'
+require 'C:\Users\prath\OneDrive\Desktop\allbookstore\lib\services\bookstore\destroyer.rb'
 module BookstoreLogic
 
  class Bookstore_Service
